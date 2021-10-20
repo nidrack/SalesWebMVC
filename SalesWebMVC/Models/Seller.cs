@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,18 +14,19 @@ namespace SalesWebMVC.Models
         public string Email { get; set; }
         public DateTime BirthDate { get; set; }
         public double Salary { get; set; }
+        public Department Department { get; set; }
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
         public Seller()
         {
         }
-        public Seller(int id, string name, string email, DateTime birthDate, double salary)
+        public Seller(string name, string email, DateTime birthDate, double salary, Department department)
         {
-            Id = id;
             Name = name;
             Email = email;
             BirthDate = birthDate;
             Salary = salary;
+            Department = department;
         }
 
         public void AddSales(SalesRecord sr)
