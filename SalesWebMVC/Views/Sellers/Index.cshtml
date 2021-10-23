@@ -1,10 +1,16 @@
-﻿@model IEnumerable<SalesWebMVC.Models.Seller>
+﻿@*Recebe o objeto declarado no controlador, como argumento na view.
+  Neste caso foi uma lista, por isso foi criado um objeto do tipo IEnumerable*@
+@model IEnumerable<SalesWebMVC.Models.Seller>
 
 @{
     ViewData["Title"] = "Sellers";
 }
 
 <h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-dark">Create New</a>
+</p>
 
 <table class="table table-striped table-hover">
     <thead>
